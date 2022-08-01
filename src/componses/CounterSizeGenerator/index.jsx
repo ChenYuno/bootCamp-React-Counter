@@ -1,14 +1,22 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../../assert/css/multipleCounter.css'
 export default function CounterSizeGenertor(props) {
-    const {changeSize,size} = props
+    const {changeSize} = props
+    const [size, setSize] = useState(0)
     const counterSizeChange =(element)=>{
-        console.log(element)
-        changeSize(Number(element.target.value))
+        let val= element.target.value
+        if(val < 0){
+            val = 0
+        }
+        setSize(Number(val))
+    }
+    const update = (element)=>{
+        counterSizeChange(element)
+        changeSize(size)
     }
   return (
     <div>
-        <input type="number" value={size} onChange={counterSizeChange} />
+        <input type="number" value={size} onChange={update} />
     </div>
   )
 }
