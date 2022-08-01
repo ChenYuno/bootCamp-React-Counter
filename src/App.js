@@ -1,10 +1,10 @@
-import Counter from './componses/counter';
+import Counter from './componses/Counter';
 import './App.css';
-
+import CounterGroup from './componses/CounterGroup';
 function App() {
   return (
     <div className="App">
-      <Counter/>
+      <CounterGroup size={3}/>
     </div>
   );
 }
