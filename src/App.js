@@ -1,12 +1,14 @@
-import Counter from './componses/Counter';
 import './App.css';
-import MultipleCounter from './componses/MultipleCounter';
-import CounterGroup from './componses/CounterGroup';
+import MultipleCounter from './features/MultipleCounter';
+import { Provider } from 'react-redux'
+import { store } from './app/store';
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
       <MultipleCounter/>
     </div>
+    </Provider>
   );
 }
 
